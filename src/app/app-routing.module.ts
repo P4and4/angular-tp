@@ -7,11 +7,12 @@ import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { ColorComponent } from './color/color.component';
 import { MiniWordComponent } from './mini-word/mini-word.component';
 import { CardComponent } from './card/card.component';
+import { DetailComponent } from './cvTech/detail/detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cv', component: CvComponent },
-  { path: 'cv/:id', component: CvComponent },
+  { path: 'cv/:id', component: DetailComponent },
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
