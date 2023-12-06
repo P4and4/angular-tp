@@ -24,5 +24,18 @@ getPersonneById(id: number): Personne {
   }
   return personne;
 }
+deletePersonneById(id: number): void {
+  const index = this.personnes.findIndex(personne => personne.id === id);
+
+  if (index !== -1) {
+    // Person found, remove it from the array
+    this.personnes.splice(index, 1);
+  } else {
+    // Person not found, throw an error
+    throw new Error(`Person with ID ${id} not found.`);
+  }
+}
+
+
 
 }
