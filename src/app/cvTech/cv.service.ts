@@ -18,9 +18,11 @@ getPersonnes(): Personne[] {
     return this.personnes;
 }
 getPersonneById(id: number): Personne {
-  const personne = this.personnes.find( personne => {
-    return personne.id === id;
-  });
+  const personne = this.personnes.find(personne => personne.id === id);
+  if (!personne) {
+    throw new Error(`Personne with ID ${id} not found.`);
+  }
   return personne;
 }
+
 }
