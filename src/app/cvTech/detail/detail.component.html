@@ -1,50 +1,56 @@
-<div class="d-flex justify-content-center" *ngIf="personne">
-  <div class="col-lg-8 push-lg-4">
-    <div class="tab-content p-b-3">
-      <div class="tab-pane active" id="profile">
-        <h4 class="m-y-2">Cv {{ personne.firstname }} {{ personne.name }}</h4>
-        <div class="d-flex justify-content-center">
-          <img
-            width="150px"
-            height="150px"
-            class="rounded-circle align-content-center"
-            src="assets/images/{{ personne.path | defaultImage }}"
-            alt=""
-          />
+<div class="container mt-4" *ngIf="personne">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-info text-white text-center">
+          <h4 class="m-0">CV: {{ personne.firstname }} {{ personne.name }}</h4>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h4 class="m-t-2">
-              <span class="fa fa-clock-o ion-clock pull-xs-right"></span>
-              Informations
-            </h4>
-            <table class="table table-hover table-striped">
-              <tbody>
-                <tr>
-                  <td><strong>Name</strong> {{ personne.name }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Firstname</strong> {{ personne.firstname }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Job</strong> {{ personne.job }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Age</strong> {{ personne.age }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Cin</strong> {{ personne.cin }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="d-flex justify-content-center">
-              <!-- <button  (click)="delete()" class="btn btn-danger">
-                Supprimer
-              </button> -->
+        <div class="card-body">
+          <div class="text-center">
+            <img
+              width="150px"
+              height="150px"
+              class="rounded-circle border border-3 border-info"
+              src="assets/images/{{ personne.path | defaultImage }}"
+              alt="{{ personne.firstname }} {{ personne.name }}"
+            />
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <h5 class="mb-3 text-center">
+                <span class="fa fa-clock-o"></span>
+                Informations
+              </h5>
+              <table class="table table-bordered table-hover">
+                <tbody>
+                  <tr>
+                    <td class="fw-bold text-center">Name</td>
+                    <td class="text-center">{{ personne.name }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-center">Firstname</td>
+                    <td class="text-center">{{ personne.firstname }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-center">Job</td>
+                    <td class="text-center">{{ personne.job }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-center">Age</td>
+                    <td class="text-center">{{ personne.age }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-center">Cin</td>
+                    <td class="text-center">{{ personne.cin }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-center">
+                <!-- Add any additional buttons or actions here -->
+              </div>
             </div>
           </div>
         </div>
-        <!--/row-->
       </div>
     </div>
   </div>
