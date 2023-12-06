@@ -23,6 +23,7 @@ import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 import { CommonModule, NgIf } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { DetailComponent } from './cvTech/detail/detail.component';
+import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { DetailComponent } from './cvTech/detail/detail.component';
     CardComponent,
     CustomDirective,
     DetailComponent,
+    DeleteCvComponent,
     //EmbaucheComponent,
   ],
   imports: [

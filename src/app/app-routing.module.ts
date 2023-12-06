@@ -8,11 +8,15 @@ import { ColorComponent } from './color/color.component';
 import { MiniWordComponent } from './mini-word/mini-word.component';
 import { CardComponent } from './card/card.component';
 import { DetailComponent } from './cvTech/detail/detail.component';
+import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 
 const routes: Routes = [
+  {path: 'cv', children:[
+    { path: '', component: CvComponent },
+    { path: ':id', component: DetailComponent },
+    { path: 'delete/:id', component: DeleteCvComponent },
+  ]},
   { path: '', component: HomeComponent },
-  { path: 'cv/:id', component: DetailComponent },
-  { path: 'cv', component: CvComponent },
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
