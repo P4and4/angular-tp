@@ -11,8 +11,8 @@ import { DetailComponent } from './cvTech/detail/detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cv', component: CvComponent },
   { path: 'cv/:id', component: DetailComponent },
+  { path: 'cv', component: CvComponent },
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
