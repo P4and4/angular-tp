@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
@@ -20,6 +21,10 @@ export class LoginComponent {
   get password() { return this.loginForm.get('password'); }
 
   onLogin() {
-    // Implement your login logic here
+    if (this.loginForm.valid) {
+      // If successful, zidou kaaba toaster aal faza
+      this.toastr.success('Congratulations! Login successful.', 'Success');
+    } else {
+    }
   }
 }
