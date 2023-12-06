@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CvService } from '../cv.service';
+import {Personne} from "../../Model/Personne";
 
 @Component({
   selector: 'app-detail',
@@ -7,7 +8,9 @@ import { CvService } from '../cv.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  constructor(  private cvService: CvService
+  personne! : Personne ;
+  constructor(  private cvService:
+                  CvService
 
     ) {
   }
