@@ -9,14 +9,17 @@ import { MiniWordComponent } from './mini-word/mini-word.component';
 import { CardComponent } from './card/card.component';
 import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {path: 'cv', children:[
     { path: '', component: CvComponent },
-    { path: ':id', component: DetailComponent },
     { path: 'delete/:id', component: DeleteCvComponent },
+    { path: ':id', component: DetailComponent },
+
   ]},
   { path: '', component: HomeComponent },
+  { path: '**', component: ErrorComponent },
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},

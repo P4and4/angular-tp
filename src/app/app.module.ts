@@ -24,6 +24,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
     CustomDirective,
     DetailComponent,
     DeleteCvComponent,
+    ErrorComponent,
     //EmbaucheComponent,
   ],
   imports: [
