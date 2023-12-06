@@ -53,7 +53,7 @@ export class EmbaucheService {
         tapToDismiss: true,
         enableHtml: true,
         toastClass: 'custom-toast-info',
-        positionClass: 'oast-top-right',
+        positionClass: 'toast-top-right',
       });
     }
   }
