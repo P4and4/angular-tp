@@ -18,14 +18,13 @@ export class HomeComponent {
   }
 
   generateSecretMovie() {
-    // Add more movies for variety
     const movies = ['Titanic', 'Inception', 'Jurassic Park', 'Avatar'];
     const randomIndex = Math.floor(Math.random() * movies.length);
-    this.secretMovie = movies[randomIndex].toLowerCase().replace(/[^a-z]/g, ''); // Remove non-alphabetic characters
+    this.secretMovie = movies[randomIndex].toLowerCase(); // Convert to lowercase
   }
 
   cleanInput(input: string): string {
-    return input.toLowerCase().replace(/[^a-z]/g, ''); // Remove non-alphabetic characters
+    return input.toLowerCase().trim().replace(/[^a-z]/g, ''); // Remove non-alphabetic characters and trim whitespaces
   }
 
   checkGuess() {
@@ -34,7 +33,6 @@ export class HomeComponent {
     if (this.cleanInput(this.userGuess) === this.secretMovie) {
       this.feedback = `Congratulations! You've guessed the correct movie "${this.secretMovie}" in ${this.attempts} attempts!`;
     } else {
-      // Provide hints or funny comments
       this.feedback = 'Oops! That\'s not the right movie. Keep trying!';
     }
   }
