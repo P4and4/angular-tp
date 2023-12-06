@@ -22,6 +22,7 @@ import {DetailCvComponent} from "./cvTech/detail-cv/detail-cv.component";
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 import { CommonModule, NgIf } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+import { DetailComponent } from './cvTech/detail/detail.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ToastrModule } from 'ngx-toastr';
     FilsComponent,
     CardComponent,
     CustomDirective,
+    DetailComponent,
     //EmbaucheComponent,
   ],
   imports: [
