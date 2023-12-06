@@ -22,9 +22,15 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
-      // If successful, zidou kaaba toaster aal faza
+      // If successful, show the first toastr
       this.toastr.success('Congratulations! Login successful.', 'Success');
+
+      // Wait for 2 seconds before showing the second toastr
+      setTimeout(() => {
+        this.toastr.success('You passed the form conditions.', 'Success');
+      }, 2000);
     } else {
+      // Handle invalid form case or implement your logic accordingly
     }
   }
 }
