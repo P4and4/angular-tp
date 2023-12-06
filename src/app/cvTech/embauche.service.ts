@@ -27,7 +27,7 @@ export class EmbaucheService {
         tapToDismiss: false,
         enableHtml: true,
         toastClass: 'custom-toast-success',
-        positionClass: 'toast-center', // Center toast on the screen
+        positionClass: 'toast-top-right', // Center toast on the screen
       });
     } else {
       this.toastr.warning(`${personne.name} est déjà sélectionné.`, 'Cv déjà sélectionné', {
@@ -37,7 +37,7 @@ export class EmbaucheService {
         tapToDismiss: true,
         enableHtml: true,
         toastClass: 'custom-toast-warning',
-        positionClass: 'toast-center',
+        positionClass: 'toast-top-right',
       });
     }
   }
@@ -53,7 +53,7 @@ export class EmbaucheService {
         tapToDismiss: true,
         enableHtml: true,
         toastClass: 'custom-toast-info',
-        positionClass: 'toast-center',
+        positionClass: 'oast-top-right',
       });
     }
   }
