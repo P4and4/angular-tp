@@ -9,7 +9,7 @@ import { ColorComponent } from './color/color.component';
 import { LoginComponent } from './login/login.component';
 import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { MiniWordComponent } from './mini-word/mini-word.component';
 import { FilsComponent } from './fils/fils.component';
@@ -48,6 +48,7 @@ import { ErrorComponent } from './error/error.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
@@ -57,6 +58,7 @@ import { ErrorComponent } from './error/error.component';
     EmbaucheComponent,
     CvComponent,
     NgIf,
+
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,
