@@ -16,10 +16,8 @@ const routes: Routes = [
     { path: '', component: CvComponent },
     { path: 'delete/:id', component: DeleteCvComponent },
     { path: ':id', component: DetailComponent },
-
   ]},
   { path: '', component: HomeComponent },
-  { path: '**', component: ErrorComponent },
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
@@ -29,6 +27,8 @@ const routes: Routes = [
   { path: 'TaskManager', component: TaskManagerComponent },
   { path: "word", component: MiniWordComponent },
 
+    //en cas d'erreur
+    { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
