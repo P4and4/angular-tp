@@ -11,7 +11,8 @@ import { CardComponent } from './card/card.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cv', component: CvComponent },
-  
+  { path: 'cv/:id', component: CvComponent },
+
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   //{ path: 'PocAddStudents', component:  },
   { path: 'TaskManager', component: TaskManagerComponent },
   { path: "word", component: MiniWordComponent },
-  
+
 ];
 
 @NgModule({

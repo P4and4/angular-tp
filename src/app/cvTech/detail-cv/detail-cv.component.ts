@@ -13,7 +13,8 @@ import { EmbaucheService } from '../embauche.service';
 export class DetailCvComponent implements OnInit {
 @Input() personne! : Personne;
 
-constructor(private embaucherService: EmbaucheService) {
+constructor(private embaucherService: EmbaucheService,
+  ) {
 }
 
 ngOnInit() {
