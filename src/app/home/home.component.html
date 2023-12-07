@@ -1,3 +1,16 @@
+<!-- home.component.html -->
 
+<div class="container">
+  <h2>Welcome to Movie Title Guess!</h2>
+  <p>Can you guess the correct movie title?</p>
 
-<p>home works!</p>
+  <label for="userGuess">Your Guess:</label>
+  <input type="text" id="userGuess" [(ngModel)]="userGuess" class="form-control" />
+
+  <button (click)="checkGuess()">Check Guess</button>
+
+  <div *ngIf="feedback" class="feedback">
+    <p>{{ feedback }}</p>
+    <button (click)="playAgain()">Play Again</button>
+  </div>
+</div>
