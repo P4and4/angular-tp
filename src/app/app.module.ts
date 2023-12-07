@@ -68,6 +68,7 @@ import { HttpClientModule } from '@angular/common/http';
       closeButton: true,
     }),
     ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],
