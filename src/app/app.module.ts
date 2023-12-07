@@ -26,6 +26,7 @@ import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import {ObservableComponent} from "./observable/observable.component";
 import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { HttpComponent } from './http/http.component';
     ListeCvComponent,
     DetailCvComponent,
     ItemCvComponent,
+    HttpClientModule,
     EmbaucheComponent,
     CvComponent,
     NgIf,
