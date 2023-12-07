@@ -25,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import {ObservableComponent} from "./observable/observable.component";
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {ObservableComponent} from "./observable/observable.component";
     DetailComponent,
     DeleteCvComponent,
     ObservableComponent,
+    HttpComponent,
     //EmbaucheComponent,
   ],
   imports: [
