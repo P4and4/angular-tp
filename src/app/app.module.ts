@@ -9,7 +9,7 @@ import { ColorComponent } from './color/color.component';
 import { LoginComponent } from './login/login.component';
 import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { MiniWordComponent } from './mini-word/mini-word.component';
 import { FilsComponent } from './fils/fils.component';
@@ -24,8 +24,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
-import { ErrorComponent } from './error/error.component';
-
+import {ObservableComponent} from "./observable/observable.component";
 
 @NgModule({
   declarations: [
@@ -43,12 +42,11 @@ import { ErrorComponent } from './error/error.component';
     CustomDirective,
     DetailComponent,
     DeleteCvComponent,
-    ErrorComponent,
+    ObservableComponent,
     //EmbaucheComponent,
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
@@ -58,14 +56,16 @@ import { ErrorComponent } from './error/error.component';
     EmbaucheComponent,
     CvComponent,
     NgIf,
-
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       progressBar: true,
       timeOut: 3000, // Set the duration for how long the toast will be displayed
       closeButton: true,
-    }),  ],
+    }),
+    ReactiveFormsModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {Personne} from "../../Model/Personne";
 import { EmbaucheService } from '../embauche.service';
 import { Route, Router } from '@angular/router';
+import {CvService} from "../cv.service";
 
 @Component({
   selector: 'app-detail-cv',
@@ -15,7 +16,8 @@ export class DetailCvComponent implements OnInit {
 @Input() personne! : Personne;
 
 constructor(private embaucherService: EmbaucheService,
-            private router: Router
+            private router: Router,
+
   ) {
 }
 
@@ -28,4 +30,6 @@ MoreInfo(){
   const link = ['cv', this.personne.id];
   this.router.navigate(link);
 }
+
+
 }
