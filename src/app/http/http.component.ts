@@ -11,15 +11,16 @@ export class HttpComponent implements OnInit{
 constructor( private http: HttpClient){}
 
 ngOnInit() {
-  this.http.get('').subscribe(
-    (response) => {
+  this.http.get('https://apilb.tridevs.net/explorer/#/User').subscribe(
+    response => {
       console.log('response', response);
     },
+
     (error) => {
       console.log('error', error);
     },
     () => {
-      console.log('Complete :) ');
+      console.log('Complete : ');
     }
   )
 }
