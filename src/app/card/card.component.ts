@@ -19,7 +19,6 @@ export class CardComponent {
 
   submitForm(form: any) {
     if (form.valid) {
-      // Handle form submission logic here
       console.log('Form submitted:', form.value);
     }
   }

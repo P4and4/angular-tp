@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,9 @@ import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import {ObservableComponent} from "./observable/observable.component";
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,9 @@ import { HttpClientModule } from '@angular/common/http';
     DeleteCvComponent,
     ObservableComponent,
     HttpComponent,
+    AboutUsComponent,
+    HighlightDirective,
+    ArticlesComponent,
     //EmbaucheComponent,
   ],
   imports: [
@@ -60,6 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
     EmbaucheComponent,
     CvComponent,
     NgIf,
+    CarouselModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,

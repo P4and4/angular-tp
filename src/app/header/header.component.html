@@ -1,73 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a
-        class="navbar-brand"
-        [routerLink]="['']"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="active text-primary"
-        >cvTech</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a
-            class="nav-link"
-            [routerLink]="['']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active text-primary"
-            >Home</a
-          >
-          <a
-            class="nav-link"
-            [routerLink]="['cv']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active text-primary"
-            >CV</a
-            >
-          <a
-            class="nav-link"
-            [routerLink]="['Color']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active text-primary"
-            >Color</a
-          >
-          <a
-            class="nav-link"
-            [routerLink]="['card']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active text-primary"
-            >Card</a
-          >
-
-          <a
-          class="nav-link"
-          [routerLink]="['word']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active text-primary"
-          >Mini Word</a
-        >
-        <a
-        class="nav-link"
-        [routerLink]="['Login']"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="active text-primary"
-        >Login</a
-      >
-
-
-
-        </div>
-      </div>
+<!-- Updated navigation bar with customizable background color -->
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">Palestia Today</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['card']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">Card</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['about']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['articles']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['word']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">Publish an Article</a>
+        </li>
+      </ul>
+      <!-- User icon for the login option -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['Login']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>

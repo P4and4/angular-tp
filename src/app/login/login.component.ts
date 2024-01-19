@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,28 +9,58 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  //bch ya9rahom
+  // email = 'email';
+  // password = 'password'
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4)]]
-    });
-  }
+  //7abit naamel banana in a box
+  // [(ngModel)]="user.email"
 
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
+  user = {
+    email: '',
+    password: '',
+    emailInvalid: false,
+    emailDirty: false,
+    emailTouched: false,
+    passwordInvalid: false,
+    passwordDirty: false,
+    passwordTouched: false
+  };
 
-  onLogin() {
-    if (this.loginForm.valid) {
-      // If successful, show the first toastr
+  constructor(private toastr: ToastrService,
+            private fb: FormBuilder,
+    )
+    // la 2eme façon ici
+    {
+      this.loginForm = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(4)]]
+      });
+    }
+    // la 2eme façon ici
+    get email() { return this.loginForm.get('email'); }
+    get password() { return this.loginForm.get('password'); }
+
+  onLogin(loginForm: NgForm) {
+    if (loginForm.valid) {
       this.toastr.success('Congratulations! Login successful.', 'Success');
-
-      // Wait for 2 seconds before showing the second toastr
       setTimeout(() => {
         this.toastr.success('You passed the form conditions.', 'Success');
       }, 2000);
     } else {
-      // Handle invalid form case or implement your logic accordingly
     }
   }
+
+
+      // la 2eme façon ici
+  onSubmit() {
+    if (this.loginForm.valid) {
+      this.toastr.success('Congratulations! Second Login successful.', 'Success');
+      setTimeout(() => {
+        this.toastr.success('You passed the Second form conditions.', 'Success');
+      }, 2000);
+    } else {
+    }
+  }
+
 }

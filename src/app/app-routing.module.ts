@@ -10,6 +10,8 @@ import { CardComponent } from './card/card.component';
 import { DetailComponent } from './cvTech/detail/detail.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import { ErrorComponent } from './error/error.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 const routes: Routes = [
   {path: 'cv', children:[
@@ -26,6 +28,8 @@ const routes: Routes = [
   //{ path: 'PocAddStudents', component:  },
   { path: 'TaskManager', component: TaskManagerComponent },
   { path: "word", component: MiniWordComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'articles', component: ArticlesComponent },
 
     //en cas d'erreur
     { path: '**', component: ErrorComponent },
