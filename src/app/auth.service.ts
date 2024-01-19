@@ -1,5 +1,6 @@
 // auth.service.ts
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AuthService {
   // Expose the observable part of the isLoggedIn subject
   isLoggedIn$ = this.isLoggedIn.asObservable();
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   login(email: string, password: string): boolean {
     // Your login logic
