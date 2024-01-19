@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,58 +9,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  //bch ya9rahom
-  // email = 'email';
-  // password = 'password'
 
-  //7abit naamel banana in a box
-  // [(ngModel)]="user.email"
-
-  user = {
-    email: '',
-    password: '',
-    emailInvalid: false,
-    emailDirty: false,
-    emailTouched: false,
-    passwordInvalid: false,
-    passwordDirty: false,
-    passwordTouched: false
-  };
-
-  constructor(private toastr: ToastrService,
-            private fb: FormBuilder,
-    )
-    // la 2eme façon ici
-    {
-      this.loginForm = this.fb.group({
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(4)]]
-      });
-    }
-    // la 2eme façon ici
-    get email() { return this.loginForm.get('email'); }
-    get password() { return this.loginForm.get('password'); }
-
-  onLogin(loginForm: NgForm) {
-    if (loginForm.valid) {
-      this.toastr.success('Congratulations! Login successful.', 'Success');
-      setTimeout(() => {
-        this.toastr.success('You passed the form conditions.', 'Success');
-      }, 2000);
-    } else {
-    }
+  constructor(private toastr: ToastrService, private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
+    });
   }
 
-
-      // la 2eme façon ici
-  onSubmit() {
+  onLogin() {
     if (this.loginForm.valid) {
-      this.toastr.success('Congratulations! Second Login successful.', 'Success');
-      setTimeout(() => {
-        this.toastr.success('You passed the Second form conditions.', 'Success');
-      }, 2000);
+      // Replace this with actual login logic
+      this.toastr.success('Login successful', 'Success');
     } else {
+      // Show an error message if the form is invalid
+      this.toastr.error('Please correct the errors in the form', 'Error');
     }
   }
-
 }

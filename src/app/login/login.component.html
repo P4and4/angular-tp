@@ -1,22 +1,7 @@
-<style>
-  h2, p {
-    font-family: 'Arial', sans-serif;
-  }
-
-  p {
-    font-size: 14px;
-  }
-</style>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6 mt-5">
-      <h2> Using NgForm: Template-Driven Approach</h2>
-      <p>
-        Les formulaires basés sur le modèle de template sont
-        <b>plus simples et plus adaptés aux formulaires plus simples avec moins de logique</b>.
-      </p>
-      <form #loginForm1="ngForm" (ngSubmit)="onLogin(loginForm1)" novalidate class="p-4 border rounded shadow">
+      <form #loginForm1="ngForm" (ngSubmit)="onLogin()" novalidate class="p-4 border rounded shadow">
         <div class="form-group">
           <label for="email" class="text-info">Email:</label>
           <input
@@ -33,7 +18,7 @@
             aria-label="Email"
           />
           <div *ngIf="email.invalid && (email.dirty || email.touched)">
-            <small class="text-danger">Belehy hedhika adresse mail tektebha ? Thabbet rouhek</small>
+            <small class="text-danger">The Email address is incoreect</small>
           </div>
         </div>
 
@@ -51,7 +36,7 @@
             aria-label="Password"
           />
           <div *ngIf="password.invalid && (password.dirty || password.touched)">
-            <small class="text-danger">Password lezem au moins 4 characters.</small>
+            <small class="text-danger">Password should have 4 characters minimum.</small>
           </div>
         </div>
 
