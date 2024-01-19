@@ -12,7 +12,8 @@ import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import { ErrorComponent } from './error/error.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ArticlesComponent } from './articles/articles.component';
-
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {path: 'cv', children:[
     { path: '', component: CvComponent },

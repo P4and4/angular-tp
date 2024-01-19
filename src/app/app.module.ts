@@ -31,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ArticlesComponent } from './articles/articles.component';
-
+import { LogoutComponent } from './logout/logout.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +55,7 @@ import { ArticlesComponent } from './articles/articles.component';
     AboutUsComponent,
     HighlightDirective,
     ArticlesComponent,
+    LogoutComponent,
     //EmbaucheComponent,
   ],
   imports: [
@@ -79,7 +82,9 @@ import { ArticlesComponent } from './articles/articles.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
