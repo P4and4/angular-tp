@@ -75,7 +75,7 @@ import { AuthGuard } from './auth.guard';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       progressBar: true,
-      timeOut: 3000, // Set the duration for how long the toast will be displayed
+      timeOut: 3000,
       closeButton: true,
     }),
     ReactiveFormsModule,
