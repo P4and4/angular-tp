@@ -17,11 +17,15 @@ export class AuthService {
     // Your login logic
     // If successful, update the isLoggedIn BehaviorSubject
     this.isLoggedIn.next(true);
+    console.log("Login successful, isLoggedIn set to true");
     return true;
-  }
+
+}
 
   logout(): void {
     this.isLoggedIn.next(false);
+    console.log("Logged out, isLoggedIn set to false");
+
   }
 
   isAuthenticated(): boolean {

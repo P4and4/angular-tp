@@ -7,10 +7,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  isLoggedIn: boolean | undefined;
+  isLoggedIn: boolean = false;
+
   constructor(private authService: AuthService) {
     this.authService.isLoggedIn$.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
+      console.log("NavbarComponent - isLoggedIn status:", this.isLoggedIn);
     });
   }
 
