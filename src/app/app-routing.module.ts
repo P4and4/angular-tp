@@ -24,6 +24,7 @@ const routes: Routes = [
 
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
+  { path: 'logout', component: LogoutComponent },
 
   { path: 'card', component: CardComponent},
   //{ path: 'PocAddStudents', component:  },

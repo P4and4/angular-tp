@@ -12,16 +12,15 @@ export class AuthService {
   // Expose the observable part of the isLoggedIn subject
   isLoggedIn$ = this.isLoggedIn.asObservable();
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router) { } // Inject Router, not AuthService
 
   login(email: string, password: string): boolean {
-    // Your login logic
+    // Implement your login logic here
     // If successful, update the isLoggedIn BehaviorSubject
     this.isLoggedIn.next(true);
     console.log("Login successful, isLoggedIn set to true");
     return true;
-
-}
+  }
 
   logout(): void {
     this.isLoggedIn.next(false);
