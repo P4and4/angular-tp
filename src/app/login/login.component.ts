@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../auth.service'; // Adjust the path as per your project structure
 
 @Component({
   selector: 'app-login',
@@ -9,16 +9,15 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-// email: any;
-// password: any;
 
-  constructor(private toastr: ToastrService, private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
+  // Getter methods for easy access to form fields
   get email() {
     return this.loginForm.get('email');
   }
@@ -27,14 +26,24 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 
-
   onLogin() {
     if (this.loginForm.valid) {
-      // Replace this with actual login logic
-      this.toastr.success('Login successful', 'Success');
+      // Safely accessing form control values
+      const email = this.loginForm.get('email')?.value ?? '';
+      const password = this.loginForm.get('password')?.value ?? '';
+
+      // Perform the login action
+      const success = this.authService.login(email, password);
+      if (success) {
+        console.log('Login Successful');
+        // Navigate to another route or perform additional actions
+      } else {
+        console.log('Login Failed');
+        // Handle login failure
+      }
     } else {
-      // Show an error message if the form is invalid
-      this.toastr.error('Please correct the errors in the form', 'Error');
+      // Form is invalid
+      console.log('Form is Invalid');
     }
   }
 }

@@ -9,6 +9,13 @@ import { AuthService } from '../auth.service';
 export class HeaderComponent {
   isLoggedIn: boolean = false;
 
+  ngOnInit() {
+    this.authService.isLoggedIn$.subscribe((loggedInStatus) => {
+      this.isLoggedIn = loggedInStatus;
+      console.log("Navbar isLoggedIn status:", this.isLoggedIn); // Debugging line
+    });
+  }
+
   constructor(private authService: AuthService) {
     this.authService.isLoggedIn$.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;

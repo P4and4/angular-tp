@@ -24,16 +24,25 @@
         </li>
       </ul>
       <!-- User icon for the login option -->
-      <ul class="navbar-nav ml-auto">
+      <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['Login']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">
             <i class="fas fa-user"></i> Login
           </a>
         </li>
+      </ul> -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" [routerLink]="['Login']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active text-white">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" href="#" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
       </ul>
-      <ul>
-        <li *ngIf="!isLoggedIn"><a href="/login">Login</a></li>
-        <li *ngIf="isLoggedIn"><a href="#" (click)="logout()">Logout</a></li>      </ul>
     </div>
   </div>
 </nav>
