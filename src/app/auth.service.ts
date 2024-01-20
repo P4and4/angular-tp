@@ -15,10 +15,10 @@ export class AuthService {
   constructor(private router: Router) { } // Inject Router, not AuthService
 
   login(email: string, password: string): boolean {
-    // Implement your login logic here
     // If successful, update the isLoggedIn BehaviorSubject
     this.isLoggedIn.next(true);
     console.log("Login successful, isLoggedIn set to true");
+    this.router.navigate(['/']);
     return true;
   }
 
