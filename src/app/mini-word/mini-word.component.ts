@@ -12,11 +12,14 @@ export class MiniWordComponent {
   textColor: string = '';
   fontSize: number = 16;
   fontFamily: string = 'Arial';
-  editableText = 'This is an example of text.'; // Default text for the editable area
-  highlightedWords = ['Palestine', 'peace', 'free']; // Words to highlight
+  showEmojiPicker = false;
+
+  editableText = ''; // Default text for the editable area
+  highlightedWords = ['Palestine', 'peace', 'free']; // Words to highlight  MAT7EBBECH TEMCHI L FAZAAAA
 
   constructor(private router: Router, private toastr: ToastrService) {}
   articleTitle: string = '';
+  lastKnownRange: Range | null = null;
 
   textStyle: any = {};
   readonly staticImages: string[] = [
@@ -24,8 +27,6 @@ export class MiniWordComponent {
     './../../assets/images/bg3.jpg',
     './../../assets/images/bg4.jpg',
     './../../assets/images/header.jpg',
-
-    // ... other images
   ];
   applyStyle(): void {
     this.textStyle = {
@@ -65,7 +66,7 @@ export class MiniWordComponent {
         return;
       }
 
-      console.log('Content:', this.editableText); // Debugging hehe
+      // console.log('Content:', this.editableText); // Debugging hehe
 
 
     const newArticle = {
@@ -89,6 +90,47 @@ export class MiniWordComponent {
   generateUniqueId(): number {
     // Implement unique ID generation logic. For example:
     return Date.now(); // Simple example, might not be unique in all cases
+  }
+  // toggleEmojiPicker(): void {
+  //   this.showEmojiPicker = !this.showEmojiPicker;
+  // }
+
+  // insertEmoji(emoji: string): void {
+  //   const contentDiv = document.querySelector('.editable-text') as HTMLElement;
+  //   if (!contentDiv) return;
+
+  //   // Insert emoji at cursor position
+  //   const selection = window.getSelection();
+  //   if (selection && selection.rangeCount > 0) {
+  //     const range = selection.getRangeAt(0);
+  //     range.deleteContents();
+
+  //     const textNode = document.createTextNode(emoji);
+  //     range.insertNode(textNode);
+
+  //     range.setStartAfter(textNode);
+  //     range.setEndAfter(textNode);
+  //     selection.removeAllRanges();
+  //     selection.addRange(range);
+  //   }
+
+  //   this.updateEditableText(); // Update the editableText property
+  //   this.showEmojiPicker = false; // Close the emoji picker
+  // }
+
+
+  updateEditableText(): void {
+    const contentDiv = document.querySelector('.editable-text') as HTMLElement;
+    if (contentDiv) {
+      this.editableText = contentDiv.innerText;
+    }
+  }
+  onContentChange(event: Event): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      this.lastKnownRange = selection.getRangeAt(0);
+    }
+    this.updateEditableText();
   }
 
   }
