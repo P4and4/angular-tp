@@ -27,6 +27,7 @@ export class MiniWordComponent {
     './../../assets/images/bg3.jpg',
     './../../assets/images/bg4.jpg',
     './../../assets/images/header.jpg',
+    './../../assets/images/bg2.jpg',
   ];
   applyStyle(): void {
     this.textStyle = {
