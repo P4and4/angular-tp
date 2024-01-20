@@ -36,6 +36,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
+import { PalestineMapComponent } from './palestine-map/palestine-map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { ArticleDetailComponent } from './articles/article-detail/article-detail
     LogoutComponent,
     RegisterComponent,
     ArticleDetailComponent,
+    PalestineMapComponent,
     //EmbaucheComponent,
   ],
   imports: [

@@ -16,7 +16,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
 import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
-
+import { PalestineMapComponent } from './palestine-map/palestine-map.component';
 
 
 const routes: Routes = [
@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   { path: 'card', component: CardComponent},
+  { path: 'palestine-map', component: PalestineMapComponent},
   //{ path: 'PocAddStudents', component:  },
   { path: 'TaskManager', component: TaskManagerComponent },
   { path: "word", component: MiniWordComponent },
