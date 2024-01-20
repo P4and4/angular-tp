@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../article.service';
 
 
@@ -13,7 +13,8 @@ export class ArticleDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class ArticleDetailComponent implements OnInit {
       this.article = this.articleService.fetchArticleData(articleId);
     } else {
       // Handle the null case
-      // Perhaps redirect to a different page or show an error message
+      this.router.navigate(['/error']);
     }
   }
 }
