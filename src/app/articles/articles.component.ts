@@ -17,8 +17,6 @@ export class ArticlesComponent implements OnInit {
     './../../assets/images/bg4.jpg',
     './../../assets/images/header.jpg',
     './../../assets/images/bg2.jpg',
-
-
     // ... other images
   ];
 
@@ -32,21 +30,18 @@ export class ArticlesComponent implements OnInit {
       id: 1, // make sure each article has a unique id
       title: 'The Resilience of Hope',
       content: 'Amidst the shadows of conflict, the spirit of perseverance emerges in the streets of Gaza.',
-      // image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+1',
       date: new Date('2024-01-20')
     },
     {
       id: 2,
       title: 'Echoes of Yesterday',
       content: 'A reflection on the historical narratives that continue to shape the landscape of the West Bank.',
-      // image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+2',
       date: new Date('2024-01-22')
     },
     {
       id: 3,
       title: 'A Glimpse Beyond the Wall',
       content: 'Exploring the day-to-day life and culture that thrives beyond the barriers.',
-      // image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+3',
       date: new Date('2024-01-25')
     },
     {
@@ -55,12 +50,10 @@ export class ArticlesComponent implements OnInit {
       content: 'In the heart of Palestine, amidst rolling hills and ancient olive groves, lies a story of resilience and heritage. This article delves into the lives of Palestinian farmers who have tended these groves for generations. Despite the challenges they face, their connection to the land remains unbreakable. We explore their daily routines, the significance of olive cultivation in their culture, and how these age-old practices have become a symbol of hope and perseverance in a landscape marked by conflict.',
       date: new Date('2024-01-25')
     },
-
     // ...hedhom fake taw mba3ed ki norbtou bel back tet7assen
   ];
 
   constructor(private router: Router) { }
-
   ngOnInit(): void {
   }
 
@@ -74,7 +67,5 @@ export class ArticlesComponent implements OnInit {
     const firstSentence = content.split(/(?<=[.?!])\s/, 1)[0];
     return firstSentence;
   }
-
-
 
 }

@@ -14,14 +14,24 @@
                       <input type="number" class="form-control" [(ngModel)]="fontSize" (input)="applyStyle()"/>
                   </div>
                   <div class="form-group mb-2">
-                      <label for="fontFamilySelect">Font Family:</label>
-                      <select class="form-control" [(ngModel)]="fontFamily" (change)="applyStyle()">
-                          <option value="Arial">Arial</option>
-                          <option value="Times New Roman">Times New Roman</option>
-                          <option value="Verdana">Verdana</option>
-                          <option value="Courier New">Courier New</option>
-                      </select>
+                    <label for="fontFamilySelect">Font Family:</label>
+                    <select class="form-control" [(ngModel)]="fontFamily" (change)="applyStyle()">
+                      <option value="Arial">Arial</option>
+                      <option value="Times New Roman">Times New Roman</option>
+                      <option value="Verdana">Verdana</option>
+                      <option value="Courier New">Courier New</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Palatino">Palatino</option>
+                      <option value="Garamond">Garamond</option>
+                      <option value="Comic Sans MS">Comic Sans MS</option>
+                      <option value="Trebuchet MS">Trebuchet MS</option>
+                      <option value="Arial Black">Arial Black</option>
+                      <option value="Impact">Impact</option>
+                      <option value="Brush Script MT">Brush Script MT</option>
+                      <!-- Add more fonts as needed -->
+                    </select>
                   </div>
+
                   <div class="text-center mt-3">
                       <button (click)="toggleStyle('bold')" class="btn btn-dark me-2">Bold</button>
                       <button (click)="toggleStyle('italic')" class="btn btn-dark">Italic</button>
