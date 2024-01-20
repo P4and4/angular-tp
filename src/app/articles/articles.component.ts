@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 // import { fadeIn, cardAnimation } from './../animations'; // Update with your actual path
 
 @Component({
@@ -37,9 +38,13 @@ export class ArticlesComponent implements OnInit {
     // ...hedhom fake taw mba3ed ki norbtou tet7assen
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  viewArticleDetail(articleId: number): void {
+    this.router.navigate(['/article', articleId]);
   }
 
 }

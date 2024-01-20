@@ -35,6 +35,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { RegisterComponent } from './register/register.component';
     ArticlesComponent,
     LogoutComponent,
     RegisterComponent,
+    ArticleDetailComponent,
     //EmbaucheComponent,
   ],
   imports: [

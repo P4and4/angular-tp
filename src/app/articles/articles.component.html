@@ -14,7 +14,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ article.title }}</h5>
           <p class="card-text">{{ article.summary }}</p>
-          <a href="#" class="btn btn-read-more">Read More</a>
+          <!-- <a href="#" class="btn btn-read-more">Read More</a> -->
+          <button (click)="viewArticleDetail(article.id)" class="btn btn-read-more">Read More</button>
+
         </div>
         <div class="card-footer">
           <small class="text-muted">Published on {{ article.date | date:'mediumDate' }}</small>

@@ -15,6 +15,10 @@ import { ArticlesComponent } from './articles/articles.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
+
+
+
 const routes: Routes = [
   {path: 'cv', children:[
     { path: '', component: CvComponent },
@@ -34,6 +38,7 @@ const routes: Routes = [
   { path: "word", component: MiniWordComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'article/:id', component: ArticleDetailComponent },
 
     //en cas d'erreur
     { path: '**', component: ErrorComponent },
