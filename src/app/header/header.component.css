@@ -3,3 +3,16 @@ nav .navbar-nav .active-link {
   color: #648c37 !important;
   /* Add any other styles you want for the active link */
 }
+
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Align the content vertically */
+}
+
+.navbar-brand img.logo {
+  width: 40px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
