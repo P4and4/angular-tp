@@ -14,6 +14,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {path: 'cv', children:[
     { path: '', component: CvComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent},
   { path: 'Color', component: ColorComponent},
   { path: 'logout', component: LogoutComponent },
+  { path: 'register', component: RegisterComponent },
 
   { path: 'card', component: CardComponent},
   //{ path: 'PocAddStudents', component:  },

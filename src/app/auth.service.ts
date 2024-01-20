@@ -31,4 +31,12 @@ export class AuthService {
   isAuthenticated(): boolean {
     return this.isLoggedIn.value;
   }
+
+
+  register(email: string, password: string): boolean {
+    // Implement your registration logic here
+    // For now, just log the registration and return true
+    console.log("Registration successful for:", email);
+    return true;
+  }
 }
