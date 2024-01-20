@@ -14,18 +14,21 @@ export class ArticlesComponent implements OnInit {
   // hovering = false;
   articles = [
     {
+      id: 1, // make sure each article has a unique id
       title: 'The Resilience of Hope',
       summary: 'Amidst the shadows of conflict, the spirit of perseverance emerges in the streets of Gaza.',
       image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+1',
       date: new Date('2024-01-20')
     },
     {
+      id: 2, // make sure each article has a unique id
       title: 'Echoes of Yesterday',
       summary: 'A reflection on the historical narratives that continue to shape the landscape of the West Bank.',
       image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+2',
       date: new Date('2024-01-22')
     },
     {
+      id: 3, // make sure each article has a unique id
       title: 'A Glimpse Beyond the Wall',
       summary: 'Exploring the day-to-day life and culture that thrives beyond the barriers.',
       image: 'https://via.placeholder.com/400x200/000000/FFFFFF/?text=Palestine+3',
