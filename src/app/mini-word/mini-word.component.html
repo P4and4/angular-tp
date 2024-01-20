@@ -29,8 +29,15 @@
           </div>
       </div>
       <div class="col-lg-8">
+         <!-- Title Input -->
+      <div class="form-group mb-3">
+        <label for="titleInput">Article Title:</label>
+        <input type="text" class="form-control" id="titleInput" [(ngModel)]="articleTitle" placeholder="Enter article title"/>
+      </div>
           <div contenteditable="true"
                [ngStyle]="textStyle"
+               (keyup)="updateText($event)"
+
                class="editable-text form-control"
                [appHighlight]="['Palestine', 'peace', 'free']">
               Here you can write whatever you like (uncensored).
