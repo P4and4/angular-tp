@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service'; // Adjust the path as per your project structure
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,46 +8,27 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  email: string = '';
+  password: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService,private toastr: ToastrService) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4)]]
-    });
-  }
+  constructor(private authService: AuthService, private toastr: ToastrService) {}
 
-  // Getter methods for easy access to form fields
-  get email() {
-    return this.loginForm.get('email');
-  }
-
-  get password() {
-    return this.loginForm.get('password');
-  }
-
-  onLogin() {
-    if (this.loginForm.valid) {
-      // Safely accessing form control values
-      const email = this.loginForm.get('email')?.value ?? '';
-      const password = this.loginForm.get('password')?.value ?? '';
-
-      // Perform the login action
-      const success = this.authService.login(email, password);
-      if (success) {
-      this.toastr.success('Login successful', 'Success');
-
-        console.log('Login Successful');
-        // Navigate to another route or perform additional actions
-      } else {
-        console.log('Login Failed');
-        this.toastr.error('Login Failed :( ', 'Error');
-
-        // Handle login failure
-      }
+  login() {
+    if (this.email && this.password) {
+      this.authService.login(this.email, this.password).subscribe(
+        response => {
+          console.log('Login Response:', response); // Log the response
+          this.toastr.success('Login successful', 'Success');
+          // Additional actions on successful login
+        },
+        error => {
+          console.error('Login Failed', error);
+          this.toastr.error('Login Failed :(', 'Error');
+        }
+      );
     } else {
-      // Form is invalid
-      console.log('Form is Invalid');
+      this.toastr.error('Please fill in all fields correctly.', 'Error');
     }
   }
+
 }

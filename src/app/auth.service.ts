@@ -1,7 +1,8 @@
 // auth.service.ts
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,14 @@ export class AuthService {
   // Expose the observable part of the isLoggedIn subject
   isLoggedIn$ = this.isLoggedIn.asObservable();
 
-  constructor(private router: Router) { } // Inject Router, not AuthService
+  constructor(private router: Router, private http: HttpClient) { } // Inject Router, not AuthService
 
-  login(email: string, password: string): boolean {
+  login(email: string, password: string): Observable<any> {
     // If successful, update the isLoggedIn BehaviorSubject
     this.isLoggedIn.next(true);
     console.log("Login successful, isLoggedIn set to true");
     this.router.navigate(['/']);
-    return true;
+    return this.http.post<any>('your-api-endpoint', { email, password });
   }
 
   logout(): void {

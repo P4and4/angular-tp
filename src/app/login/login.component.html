@@ -2,30 +2,29 @@
   <div class="row justify-content-center">
     <div class="col-md-6 mt-5">
       <div class="card login-card p-4 border rounded shadow">
-        <img src="./../../assets/images/woman.png" alt="Palestine Icon" class="icon">
         <h2 class="text-center mb-4">Login</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="needs-validation" novalidate>
+        <form (ngSubmit)="login()" #loginForm="ngForm" class="needs-validation" novalidate>
           <div class="form-group">
             <label for="email" class="text-dark">Email:</label>
-            <input type="email" formControlName="email" class="form-control" appRainbow aria-label="Email" required />
-            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="invalid-feedback">
-              <small>The Email address is incorrect</small>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required #emailField="ngModel">
+            <div *ngIf="emailField.invalid && emailField.touched" class="invalid-feedback">
+              <small>The Email address is required.</small>
             </div>
           </div>
 
           <div class="form-group">
             <label for="password" class="text-dark">Password:</label>
-            <input type="password" formControlName="password" class="form-control" appRainbow aria-label="Password" required />
-            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
-              <small>Password should have 4 characters minimum.</small>
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required #passwordField="ngModel" minlength="4">
+            <div *ngIf="passwordField.invalid && passwordField.touched" class="invalid-feedback">
+              <small>Password is required and should have at least 4 characters.</small>
             </div>
           </div>
 
           <button type="submit" [disabled]="loginForm.invalid" class="btn btn-danger btn-block mt-3">Login</button>
         </form>
       </div>
-      <div class="mt-3 text-center register-link">
-        <p>Don't have an account? <a routerLink="/register" class="register-now-link">Register here</a></p>
+      <div class="mt-3 text-center">
+        <p>Don't have an account? <a routerLink="/register">Register here</a></p>
       </div>
     </div>
   </div>
