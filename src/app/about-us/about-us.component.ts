@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ContactComponent } from '../contact/contact.component';
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
