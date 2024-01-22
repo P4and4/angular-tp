@@ -30,5 +30,4 @@ export class LoginComponent {
       this.toastr.error('Please fill in all fields correctly.', 'Error');
     }
   }
-
 }

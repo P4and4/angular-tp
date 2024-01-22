@@ -27,3 +27,8 @@
 .register-link .register-now-link:hover {
   text-decoration: underline;
 }
+
+
+.error-border {
+  border: 2px solid red;
+}

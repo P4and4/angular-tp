@@ -13,10 +13,9 @@
 }
 
 .header-overlay {
-  /* ... */
   background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
 }
-/* Add this to your CSS */
+
 .header-overlay h1 .icon {
   margin-right: 5px; /* Adjust the margin as needed */
   width: 12px; /* Adjust the width to make it really small */

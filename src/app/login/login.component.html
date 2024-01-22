@@ -7,7 +7,7 @@
           <div class="form-group">
             <label for="email" class="text-dark">Email:</label>
             <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required #emailField="ngModel">
-            <div *ngIf="emailField.invalid && emailField.touched" class="invalid-feedback">
+            <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="invalid-feedback">
               <small>The Email address is required.</small>
             </div>
           </div>
